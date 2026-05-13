@@ -74,23 +74,9 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-white">
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0" style={{ top: '300px', bottom: 0, left: 0, right: 0 }}>
-        <video
-          ref={videoRef}
-          src={videoUrl}
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ opacity: videoOpacity, transition: 'opacity 0.5s ease-in-out' }}
-          muted
-          playsInline
-          loop={false}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
-      </div>
-
+    <div className="bg-white">
       {/* Navigation Bar */}
-      <nav className="relative z-10 flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-6 max-w-7xl mx-auto bg-white/80 backdrop-blur-md">
         <div className="flex items-center">
           <div className="text-3xl tracking-tight text-black instrument">
             Aethera<sup className="text-xs align-super">®</sup>
@@ -110,24 +96,41 @@ const App: React.FC = () => {
         </button>
       </nav>
 
-      {/* Hero Section */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6" 
-           style={{ paddingTop: 'calc(8rem - 75px)', paddingBottom: '10rem' }}>
-        
-        <h1 className="text-5xl sm:text-7xl md:text-8xl max-w-7xl font-normal leading-[0.95] tracking-[-2.46px] text-black instrument animate-fade-rise">
-          Beyond <span className="italic text-[#6F6F6F]">silence</span>, we build <span className="italic text-[#6F6F6F]">the eternal.</span>
-        </h1>
+      {/* HERO SECTION WITH VIDEO */}
+      <div className="relative min-h-[100dvh] flex flex-col pt-20 overflow-hidden">
+        {/* Video Background - ONLY in Hero */}
+        <div className="absolute inset-0 z-0" style={{ top: '300px', bottom: 0 }}>
+          <video
+            ref={videoRef}
+            src={videoUrl}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ opacity: videoOpacity, transition: 'opacity 0.5s ease-in-out' }}
+            muted
+            playsInline
+            loop={false}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
+        </div>
 
-        <p className="mt-8 max-w-2xl text-base sm:text-lg leading-relaxed text-[#6F6F6F] animate-fade-rise-delay">
-          Building platforms for brilliant minds, fearless makers, and thoughtful souls. 
-          Through the noise, we craft digital havens for deep work and pure flows.
-        </p>
+        {/* Hero Content */}
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 flex-1" 
+             style={{ paddingBottom: '8rem' }}>
+          
+          <h1 className="text-5xl sm:text-7xl md:text-8xl max-w-7xl font-normal leading-[0.95] tracking-[-2.46px] text-black instrument animate-fade-rise">
+            Beyond <span className="italic text-[#6F6F6F]">silence</span>, we build <span className="italic text-[#6F6F6F]">the eternal.</span>
+          </h1>
 
-        <button 
-          className="mt-12 px-14 py-5 text-base font-medium bg-black text-white rounded-full hover:scale-[1.03] transition-transform animate-fade-rise-delay-2"
-        >
-          Begin Journey
-        </button>
+          <p className="mt-8 max-w-2xl text-base sm:text-lg leading-relaxed text-[#6F6F6F] animate-fade-rise-delay">
+            Building platforms for brilliant minds, fearless makers, and thoughtful souls. 
+            Through the noise, we craft digital havens for deep work and pure flows.
+          </p>
+
+          <button 
+            className="mt-12 px-14 py-5 text-base font-medium bg-black text-white rounded-full hover:scale-[1.03] transition-transform animate-fade-rise-delay-2"
+          >
+            Begin Journey
+          </button>
+        </div>
       </div>
 
       {/* STUDIO SECTION */}
@@ -199,7 +202,6 @@ const App: React.FC = () => {
       <section id="about" className="bg-white py-24 px-6 border-t border-zinc-200">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-12 gap-x-12 items-center">
-            {/* Left Content */}
             <div className="md:col-span-7">
               <div className="inline-block px-4 py-1.5 rounded-full border border-black/10 text-xs tracking-[3px] mb-8">
                 OUR PHILOSOPHY
@@ -223,7 +225,6 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Image */}
             <div className="md:col-span-5 mt-12 md:mt-0">
               <div className="relative">
                 <img 
@@ -240,7 +241,6 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          {/* Values */}
           <div className="mt-24 pt-16 border-t border-zinc-200">
             <div className="text-center mb-12">
               <div className="text-sm tracking-[2px] text-black/60">WHAT WE STAND FOR</div>
