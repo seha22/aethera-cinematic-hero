@@ -87,7 +87,7 @@ const App: React.FC = () => {
           <a href="#" className="text-black hover:text-black transition-colors">Home</a>
           <a href="#studio" className="text-[#6F6F6F] hover:text-black transition-colors">Studio</a>
           <a href="#about" className="text-[#6F6F6F] hover:text-black transition-colors">About</a>
-          <a href="#" className="text-[#6F6F6F] hover:text-black transition-colors">Journal</a>
+          <a href="#journal" className="text-[#6F6F6F] hover:text-black transition-colors">Journal</a>
           <a href="#" className="text-[#6F6F6F] hover:text-black transition-colors">Reach Us</a>
         </div>
 
@@ -98,7 +98,6 @@ const App: React.FC = () => {
 
       {/* HERO SECTION WITH VIDEO */}
       <div className="relative min-h-[100dvh] flex flex-col pt-20 overflow-hidden">
-        {/* Video Background - ONLY in Hero */}
         <div className="absolute inset-0 z-0" style={{ top: '300px', bottom: 0 }}>
           <video
             ref={videoRef}
@@ -112,10 +111,7 @@ const App: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 flex-1" 
-             style={{ paddingBottom: '8rem' }}>
-          
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 flex-1" style={{ paddingBottom: '8rem' }}>
           <h1 className="text-5xl sm:text-7xl md:text-8xl max-w-7xl font-normal leading-[0.95] tracking-[-2.46px] text-black instrument animate-fade-rise">
             Beyond <span className="italic text-[#6F6F6F]">silence</span>, we build <span className="italic text-[#6F6F6F]">the eternal.</span>
           </h1>
@@ -125,9 +121,7 @@ const App: React.FC = () => {
             Through the noise, we craft digital havens for deep work and pure flows.
           </p>
 
-          <button 
-            className="mt-12 px-14 py-5 text-base font-medium bg-black text-white rounded-full hover:scale-[1.03] transition-transform animate-fade-rise-delay-2"
-          >
+          <button className="mt-12 px-14 py-5 text-base font-medium bg-black text-white rounded-full hover:scale-[1.03] transition-transform animate-fade-rise-delay-2">
             Begin Journey
           </button>
         </div>
@@ -227,11 +221,7 @@ const App: React.FC = () => {
 
             <div className="md:col-span-5 mt-12 md:mt-0">
               <div className="relative">
-                <img 
-                  src="https://picsum.photos/id/1027/700/900" 
-                  alt="Elena Voss" 
-                  className="rounded-3xl shadow-xl w-full" 
-                />
+                <img src="https://picsum.photos/id/1027/700/900" alt="Elena Voss" className="rounded-3xl shadow-xl w-full" />
                 <div className="absolute -bottom-6 -left-6 bg-white p-6 shadow-xl rounded-2xl border border-zinc-100 max-w-[240px]">
                   <div className="text-xs tracking-widest text-black/60 mb-1">EST. 2021</div>
                   <div className="text-xl instrument tracking-tight">Aethera</div>
@@ -263,6 +253,106 @@ const App: React.FC = () => {
                 <p className="text-[#666666]">Technology should disappear. What remains is calm, focus, and meaning.</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* JOURNAL SECTION */}
+      <section id="journal" className="bg-white py-24 px-6 border-t border-zinc-200">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-1.5 rounded-full border border-black/10 text-xs tracking-[3px] mb-6">
+              JOURNAL
+            </div>
+            <h2 className="text-6xl sm:text-7xl instrument tracking-tight mb-4">
+              Thoughts worth keeping.
+            </h2>
+            <p className="max-w-lg mx-auto text-lg text-[#666666]">
+              Essays, notes, and reflections on design, technology, and the quiet life.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Article 1 */}
+            <div className="group cursor-pointer">
+              <div className="overflow-hidden rounded-2xl mb-6">
+                <img 
+                  src="https://picsum.photos/id/1036/600/400" 
+                  alt="The Cost of Constant Connection" 
+                  className="w-full h-[260px] object-cover transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
+              <div className="flex items-center gap-3 text-xs tracking-widest text-black/60 mb-3">
+                <span>ESSAY</span> 
+                <span>•</span> 
+                <span>MAY 12, 2026</span>
+              </div>
+              <h3 className="text-2xl instrument tracking-tight leading-tight mb-3 group-hover:underline">
+                The Cost of Constant Connection
+              </h3>
+              <p className="text-[#666666] line-clamp-3">
+                In a world that rewards availability, choosing silence has become a radical act.
+              </p>
+              <div className="mt-4 text-sm text-black/60 flex items-center gap-2">
+                8 min read <span className="text-xs">→</span>
+              </div>
+            </div>
+
+            {/* Article 2 */}
+            <div className="group cursor-pointer">
+              <div className="overflow-hidden rounded-2xl mb-6">
+                <img 
+                  src="https://picsum.photos/id/1049/600/400" 
+                  alt="Designing for Slowness" 
+                  className="w-full h-[260px] object-cover transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
+              <div className="flex items-center gap-3 text-xs tracking-widest text-black/60 mb-3">
+                <span>NOTE</span> 
+                <span>•</span> 
+                <span>MAY 5, 2026</span>
+              </div>
+              <h3 className="text-2xl instrument tracking-tight leading-tight mb-3 group-hover:underline">
+                Designing for Slowness
+              </h3>
+              <p className="text-[#666666] line-clamp-3">
+                Why the best interfaces feel invisible. And why speed is not always the goal.
+              </p>
+              <div className="mt-4 text-sm text-black/60 flex items-center gap-2">
+                12 min read <span className="text-xs">→</span>
+              </div>
+            </div>
+
+            {/* Article 3 */}
+            <div className="group cursor-pointer">
+              <div className="overflow-hidden rounded-2xl mb-6">
+                <img 
+                  src="https://picsum.photos/id/1061/600/400" 
+                  alt="Why We Removed Notifications" 
+                  className="w-full h-[260px] object-cover transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
+              <div className="flex items-center gap-3 text-xs tracking-widest text-black/60 mb-3">
+                <span>ESSAY</span> 
+                <span>•</span> 
+                <span>APRIL 28, 2026</span>
+              </div>
+              <h3 className="text-2xl instrument tracking-tight leading-tight mb-3 group-hover:underline">
+                Why We Removed Notifications
+              </h3>
+              <p className="text-[#666666] line-clamp-3">
+                The quiet revolution happening inside the most thoughtful digital products.
+              </p>
+              <div className="mt-4 text-sm text-black/60 flex items-center gap-2">
+                6 min read <span className="text-xs">→</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-16">
+            <button className="px-10 py-4 border border-black/30 hover:bg-black hover:text-white transition-all rounded-full text-sm tracking-wider">
+              VIEW ALL ARTICLES
+            </button>
           </div>
         </div>
       </section>
