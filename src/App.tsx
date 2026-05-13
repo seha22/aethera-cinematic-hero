@@ -100,7 +100,7 @@ const App: React.FC = () => {
         <div className="flex items-center gap-10 text-sm">
           <a href="#" className="text-black hover:text-black transition-colors">Home</a>
           <a href="#studio" className="text-[#6F6F6F] hover:text-black transition-colors">Studio</a>
-          <a href="#" className="text-[#6F6F6F] hover:text-black transition-colors">About</a>
+          <a href="#about" className="text-[#6F6F6F] hover:text-black transition-colors">About</a>
           <a href="#" className="text-[#6F6F6F] hover:text-black transition-colors">Journal</a>
           <a href="#" className="text-[#6F6F6F] hover:text-black transition-colors">Reach Us</a>
         </div>
@@ -133,7 +133,6 @@ const App: React.FC = () => {
       {/* STUDIO SECTION */}
       <section id="studio" className="relative bg-[#0A0A0A] text-white py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-1.5 rounded-full border border-white/20 text-xs tracking-[3px] mb-6">
               THE STUDIO
@@ -146,15 +145,9 @@ const App: React.FC = () => {
             </p>
           </div>
 
-          {/* Studio Grid */}
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Card 1 */}
             <div className="group relative overflow-hidden rounded-3xl aspect-[16/10] bg-zinc-900">
-              <img 
-                src="https://picsum.photos/id/1015/800/600" 
-                alt="Digital Sanctuary" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-              />
+              <img src="https://picsum.photos/id/1015/800/600" alt="Digital Sanctuary" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80" />
               <div className="absolute bottom-0 left-0 p-8">
                 <div className="text-sm tracking-widest text-white/70 mb-2">01 — SANCTUARY</div>
@@ -163,13 +156,8 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 2 */}
             <div className="group relative overflow-hidden rounded-3xl aspect-[16/10] bg-zinc-900">
-              <img 
-                src="https://picsum.photos/id/1033/800/600" 
-                alt="Thoughtful Platform" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-              />
+              <img src="https://picsum.photos/id/1033/800/600" alt="Thoughtful Platform" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80" />
               <div className="absolute bottom-0 left-0 p-8">
                 <div className="text-sm tracking-widest text-white/70 mb-2">02 — PLATFORM</div>
@@ -178,13 +166,8 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 3 */}
             <div className="group relative overflow-hidden rounded-3xl aspect-[16/10] bg-zinc-900">
-              <img 
-                src="https://picsum.photos/id/106/800/600" 
-                alt="Cinematic Experience" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-              />
+              <img src="https://picsum.photos/id/106/800/600" alt="Cinematic Experience" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80" />
               <div className="absolute bottom-0 left-0 p-8">
                 <div className="text-sm tracking-widest text-white/70 mb-2">03 — EXPERIENCE</div>
@@ -193,13 +176,8 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 4 */}
             <div className="group relative overflow-hidden rounded-3xl aspect-[16/10] bg-zinc-900">
-              <img 
-                src="https://picsum.photos/id/1074/800/600" 
-                alt="Systems" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-              />
+              <img src="https://picsum.photos/id/1074/800/600" alt="Systems" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80" />
               <div className="absolute bottom-0 left-0 p-8">
                 <div className="text-sm tracking-widest text-white/70 mb-2">04 — SYSTEMS</div>
@@ -213,6 +191,78 @@ const App: React.FC = () => {
             <button className="px-10 py-4 border border-white/30 hover:bg-white hover:text-black transition-all rounded-full text-sm tracking-wider">
               EXPLORE THE STUDIO
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT SECTION */}
+      <section id="about" className="bg-white py-24 px-6 border-t border-zinc-200">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-12 gap-x-12 items-center">
+            {/* Left Content */}
+            <div className="md:col-span-7">
+              <div className="inline-block px-4 py-1.5 rounded-full border border-black/10 text-xs tracking-[3px] mb-8">
+                OUR PHILOSOPHY
+              </div>
+
+              <h2 className="text-6xl sm:text-7xl instrument tracking-tighter leading-none mb-10">
+                We design for<br />those who think<br />deeply.
+              </h2>
+
+              <div className="max-w-[520px] text-lg text-[#555555] leading-relaxed">
+                Aethera was born from a simple belief: the most meaningful work happens in silence. 
+                We create digital environments that protect attention, honor slowness, and invite presence.
+              </div>
+
+              <div className="mt-12 flex items-center gap-4">
+                <div className="w-px h-12 bg-black/30" />
+                <div>
+                  <div className="font-medium">— Elena Voss</div>
+                  <div className="text-sm text-[#777777]">Founder &amp; Principal</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Image */}
+            <div className="md:col-span-5 mt-12 md:mt-0">
+              <div className="relative">
+                <img 
+                  src="https://picsum.photos/id/1027/700/900" 
+                  alt="Elena Voss" 
+                  className="rounded-3xl shadow-xl w-full" 
+                />
+                <div className="absolute -bottom-6 -left-6 bg-white p-6 shadow-xl rounded-2xl border border-zinc-100 max-w-[240px]">
+                  <div className="text-xs tracking-widest text-black/60 mb-1">EST. 2021</div>
+                  <div className="text-xl instrument tracking-tight">Aethera</div>
+                  <div className="text-sm mt-1 text-[#666]">New York • Remote</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Values */}
+          <div className="mt-24 pt-16 border-t border-zinc-200">
+            <div className="text-center mb-12">
+              <div className="text-sm tracking-[2px] text-black/60">WHAT WE STAND FOR</div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <div className="text-5xl instrument mb-6">01</div>
+                <h4 className="text-2xl tracking-tight mb-4">Depth over Speed</h4>
+                <p className="text-[#666666]">We reject the cult of productivity. Every pixel, every interaction is considered with care.</p>
+              </div>
+              <div>
+                <div className="text-5xl instrument mb-6">02</div>
+                <h4 className="text-2xl tracking-tight mb-4">Restraint as Beauty</h4>
+                <p className="text-[#666666]">We believe less is more. We remove until only the essential remains.</p>
+              </div>
+              <div>
+                <div className="text-5xl instrument mb-6">03</div>
+                <h4 className="text-2xl tracking-tight mb-4">Presence &amp; Clarity</h4>
+                <p className="text-[#666666]">Technology should disappear. What remains is calm, focus, and meaning.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
