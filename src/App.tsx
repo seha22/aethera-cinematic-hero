@@ -34,12 +34,10 @@ const App: React.FC = () => {
 
       const progress = currentTime / duration;
 
-      // Fade in at the beginning
       if (currentTime < 0.5 && videoOpacity < 1) {
         setVideoOpacity(Math.min(1, currentTime / 0.5));
       }
 
-      // Fade out near the end (last 0.5 seconds)
       if (progress > 0.92 && !isFadingOut) {
         isFadingOut = true;
         const fadeOutInterval = setInterval(() => {
@@ -63,12 +61,10 @@ const App: React.FC = () => {
       setTimeout(() => setVideoOpacity(1), 50);
     });
 
-    // Start monitoring
     rafId = requestAnimationFrame(checkVideoProgress);
 
-    // Auto play
     video.play().catch(() => {
-      console.log('Autoplay blocked, user interaction required');
+      console.log('Autoplay blocked');
     });
 
     return () => {
@@ -90,7 +86,6 @@ const App: React.FC = () => {
           playsInline
           loop={false}
         />
-        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
       </div>
 
@@ -104,15 +99,13 @@ const App: React.FC = () => {
 
         <div className="flex items-center gap-10 text-sm">
           <a href="#" className="text-black hover:text-black transition-colors">Home</a>
-          <a href="#" className="text-[#6F6F6F] hover:text-black transition-colors">Studio</a>
+          <a href="#studio" className="text-[#6F6F6F] hover:text-black transition-colors">Studio</a>
           <a href="#" className="text-[#6F6F6F] hover:text-black transition-colors">About</a>
           <a href="#" className="text-[#6F6F6F] hover:text-black transition-colors">Journal</a>
           <a href="#" className="text-[#6F6F6F] hover:text-black transition-colors">Reach Us</a>
         </div>
 
-        <button 
-          className="px-6 py-2.5 text-sm font-medium bg-black text-white rounded-full hover:scale-[1.03] transition-transform"
-        >
+        <button className="px-6 py-2.5 text-sm font-medium bg-black text-white rounded-full hover:scale-[1.03] transition-transform">
           Begin Journey
         </button>
       </nav>
@@ -136,6 +129,93 @@ const App: React.FC = () => {
           Begin Journey
         </button>
       </div>
+
+      {/* STUDIO SECTION */}
+      <section id="studio" className="relative bg-[#0A0A0A] text-white py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-1.5 rounded-full border border-white/20 text-xs tracking-[3px] mb-6">
+              THE STUDIO
+            </div>
+            <h2 className="text-6xl sm:text-7xl instrument tracking-tight mb-6">
+              Crafted in silence.
+            </h2>
+            <p className="max-w-xl mx-auto text-lg text-[#A1A1A1]">
+              Every project begins with deep listening. We design digital spaces that feel like home for the mind.
+            </p>
+          </div>
+
+          {/* Studio Grid */}
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Card 1 */}
+            <div className="group relative overflow-hidden rounded-3xl aspect-[16/10] bg-zinc-900">
+              <img 
+                src="https://picsum.photos/id/1015/800/600" 
+                alt="Digital Sanctuary" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80" />
+              <div className="absolute bottom-0 left-0 p-8">
+                <div className="text-sm tracking-widest text-white/70 mb-2">01 — SANCTUARY</div>
+                <h3 className="text-3xl instrument tracking-tight">The Quiet Room</h3>
+                <p className="mt-3 max-w-xs text-[#C1C1C1]">A private digital space for deep focus and uninterrupted thought.</p>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="group relative overflow-hidden rounded-3xl aspect-[16/10] bg-zinc-900">
+              <img 
+                src="https://picsum.photos/id/1033/800/600" 
+                alt="Thoughtful Platform" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80" />
+              <div className="absolute bottom-0 left-0 p-8">
+                <div className="text-sm tracking-widest text-white/70 mb-2">02 — PLATFORM</div>
+                <h3 className="text-3xl instrument tracking-tight">Aether Journal</h3>
+                <p className="mt-3 max-w-xs text-[#C1C1C1]">A living archive for writers, thinkers, and long-form creators.</p>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="group relative overflow-hidden rounded-3xl aspect-[16/10] bg-zinc-900">
+              <img 
+                src="https://picsum.photos/id/106/800/600" 
+                alt="Cinematic Experience" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80" />
+              <div className="absolute bottom-0 left-0 p-8">
+                <div className="text-sm tracking-widest text-white/70 mb-2">03 — EXPERIENCE</div>
+                <h3 className="text-3xl instrument tracking-tight">Liminal</h3>
+                <p className="mt-3 max-w-xs text-[#C1C1C1]">Immersive interfaces that blur the line between digital and physical.</p>
+              </div>
+            </div>
+
+            {/* Card 4 */}
+            <div className="group relative overflow-hidden rounded-3xl aspect-[16/10] bg-zinc-900">
+              <img 
+                src="https://picsum.photos/id/1074/800/600" 
+                alt="Systems" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80" />
+              <div className="absolute bottom-0 left-0 p-8">
+                <div className="text-sm tracking-widest text-white/70 mb-2">04 — SYSTEMS</div>
+                <h3 className="text-3xl instrument tracking-tight">The Atlas</h3>
+                <p className="mt-3 max-w-xs text-[#C1C1C1]">A knowledge operating system for teams that value clarity over speed.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-16">
+            <button className="px-10 py-4 border border-white/30 hover:bg-white hover:text-black transition-all rounded-full text-sm tracking-wider">
+              EXPLORE THE STUDIO
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
